@@ -1,0 +1,19 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/messages
+description: ""
+url: http://127.0.0.1:5000/api/messages
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"_id\": \"automatically_generated_id\",\r
+
+    \    \"sender\": \"68c7a123456789abcdef1234\",\r
+
+    \    \"receiver\": \"68c7b987654321abcdef5678\",\r
+
+    \    \"message\": \"Hi! Would you like to practice UI/UX together?\"\r
+
+    }"
+order: 4503599088633173

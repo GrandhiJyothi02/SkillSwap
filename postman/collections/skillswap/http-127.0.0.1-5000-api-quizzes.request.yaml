@@ -1,0 +1,27 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/quizzes
+description: ""
+url: http://127.0.0.1:5000/api/quizzes
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"question\": \"Which keyword is used to inherit a class in Java?\",\r
+
+    \    \"options\": [\r
+
+    \        \"this\",\r
+
+    \        \"extends\",\r
+
+    \        \"implements\",\r
+
+    \        \"super\"\r
+
+    \    ],\r
+
+    \    \"answer\": \"extends\"\r
+
+    }"
+order: 4503599626081662

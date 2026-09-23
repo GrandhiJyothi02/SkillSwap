@@ -1,0 +1,19 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/skills
+description: ""
+url: http://127.0.0.1:5000/api/skills
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"UI/UX Design\",\r
+
+    \    \"category\": \"Design\",\r
+
+    \    \"description\": \"Learn user interface and user experience design, wireframing, prototyping and usability principles\",\r
+
+    \    \"tutor\": \"Sneha Patel\"\r
+
+    }"
+order: 4503597352261866

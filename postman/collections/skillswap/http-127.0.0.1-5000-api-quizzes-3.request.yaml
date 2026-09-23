@@ -1,0 +1,27 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/quizzes
+description: ""
+url: http://127.0.0.1:5000/api/quizzes
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"question\": \"Which data structure follows the FIFO principle?\",\r
+
+    \    \"options\": [\r
+
+    \        \"Stack\",\r
+
+    \        \"Queue\",\r
+
+    \        \"Tree\",\r
+
+    \        \"Graph\"\r
+
+    \    ],\r
+
+    \    \"answer\": \"Queue\"\r
+
+    }"
+order: 4503599626798635

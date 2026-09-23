@@ -1,0 +1,19 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/skills
+description: ""
+url: http://127.0.0.1:5000/api/skills
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"React\",\r
+
+    \    \"category\": \"Web Development\",\r
+
+    \    \"description\": \"Learn React for building interactive and modern web applications\",\r
+
+    \    \"tutor\": \"Priya Reddy\"\r
+
+    }"
+order: 4503591121531636

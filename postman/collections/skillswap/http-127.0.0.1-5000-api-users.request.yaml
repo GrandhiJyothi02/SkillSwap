@@ -1,0 +1,6 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/users
+description: ""
+url: http://127.0.0.1:5000/api/users
+method: GET
+order: 4503599627368223

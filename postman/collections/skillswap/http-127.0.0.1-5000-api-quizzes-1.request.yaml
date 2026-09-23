@@ -1,0 +1,27 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/quizzes
+description: ""
+url: http://127.0.0.1:5000/api/quizzes
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"question\": \"Which language is mainly used to style web pages?\",\r
+
+    \    \"options\": [\r
+
+    \        \"HTML\",\r
+
+    \        \"CSS\",\r
+
+    \        \"Java\",\r
+
+    \        \"Python\"\r
+
+    \    ],\r
+
+    \    \"answer\": \"CSS\"\r
+
+    }"
+order: 4503599626463594

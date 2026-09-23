@@ -1,0 +1,21 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/meetings
+description: ""
+url: http://127.0.0.1:5000/api/meetings
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"tutor\": \"68c7a123456789abcdef1234\",\r
+
+    \    \"learner\": \"68c7b987654321abcdef5678\",\r
+
+    \    \"skill\": \"Java\",\r
+
+    \    \"date\": \"2026-09-20\",\r
+
+    \    \"duration\": 60\r
+
+    }"
+order: 4503597487890776
