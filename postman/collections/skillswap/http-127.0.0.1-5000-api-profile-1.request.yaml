@@ -1,0 +1,6 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/profile
+description: ""
+url: http://127.0.0.1:5000/api/profile
+method: GET
+order: 4503599625673512

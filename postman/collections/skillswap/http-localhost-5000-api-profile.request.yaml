@@ -1,0 +1,37 @@
+$kind: http-request
+name: http://localhost:5000/api/profile
+description: ""
+url: http://localhost:5000/api/profile
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"id\": \"USR002\",\r
+
+    \    \"name\": \"Rahul Verma\",\r
+
+    \    \"email\": \"rahul@gmail.com\",\r
+
+    \    \"bio\": \"Software developer interested in programming and artificial intelligence.\",\r
+
+    \    \"skills\": [\r
+
+    \        \"Python\",\r
+
+    \        \"Java\",\r
+
+    \        \"Machine Learning\"\r
+
+    \    ],\r
+
+    \    \"learningSkills\": [\r
+
+    \        \"React\",\r
+
+    \        \"MongoDB\"\r
+
+    \    ]\r
+
+    }"
+order: 4503599623203721

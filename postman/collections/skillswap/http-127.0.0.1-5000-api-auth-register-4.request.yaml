@@ -1,0 +1,17 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/auth/register
+description: ""
+url: http://127.0.0.1:5000/api/auth/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Priya Reddy\",\r
+
+    \    \"email\": \"priya@gmail.com\",\r
+
+    \    \"password\": \"Priya123\"\r
+
+    }"
+order: 4503599627356779

@@ -1,0 +1,17 @@
+$kind: http-request
+name: http://localhost:5000/api/messages
+description: ""
+url: http://localhost:5000/api/messages
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"sender\": \"68d1f234567890abcdef1234\",\r
+
+    \    \"receiver\": \"68d2a987654321abcdef5678\",\r
+
+    \    \"message\": \"Hello! Are you available for a skill exchange session?\"\r
+
+    }"
+order: 4503599543955404

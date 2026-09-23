@@ -1,0 +1,37 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/profile
+description: ""
+url: http://127.0.0.1:5000/api/profile
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"id\": \"USR001\",\r
+
+    \    \"name\": \"Ananya Sharma\",\r
+
+    \    \"email\": \"ananya@gmail.com\",\r
+
+    \    \"bio\": \"Computer science student interested in web development.\",\r
+
+    \    \"skills\": [\r
+
+    \        \"Java\",\r
+
+    \        \"React\",\r
+
+    \        \"UI/UX Design\"\r
+
+    \    ],\r
+
+    \    \"learningSkills\": [\r
+
+    \        \"Python\",\r
+
+    \        \"Node.js\"\r
+
+    \    ]\r
+
+    }"
+order: 4503599601272850

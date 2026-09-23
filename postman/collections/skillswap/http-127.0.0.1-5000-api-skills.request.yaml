@@ -1,0 +1,23 @@
+$kind: http-request
+name: http://127.0.0.1:5000/api/skills
+description: ""
+url: http://127.0.0.1:5000/api/skills
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \   \r
+
+    \    \"name\": \"Java\",\r
+
+    \    \"category\": \"Programming\",\r
+
+    \    \"description\": \"Learn Java programming and object-oriented concepts\",\r
+
+    \    \"tutor\": \"Ananya Sharma\"\r
+
+    \  \r
+
+    }"
+order: 4503500336146906
