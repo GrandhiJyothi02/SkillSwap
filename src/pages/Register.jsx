@@ -29,26 +29,35 @@ export default function Register() {
     return null;
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const validationError = validate();
-    if (validationError) {
-      toast.error(validationError);
-      return;
-    }
+ async function handleSubmit(e) {
+  e.preventDefault();
 
-    setSubmitting(true);
-    const { error } = signUp({ fullName, email, password, skills: teaches });
-    setSubmitting(false);
+  const validationError = validate();
 
-    if (error) {
-      toast.error(error);
-      return;
-    }
-    toast.success("Account created");
-    navigate("/dashboard");
+  if (validationError) {
+    toast.error(validationError);
+    return;
   }
 
+  setSubmitting(true);
+
+  const { error } = await signUp({
+    fullName,
+    email,
+    password,
+    skills: teaches,
+  });
+
+  setSubmitting(false);
+
+  if (error) {
+    toast.error(error);
+    return;
+  }
+
+  toast.success("Account created");
+  navigate("/dashboard");
+}
   return (
     <AuthShell
       eyebrow="Join the exchange"

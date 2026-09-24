@@ -13,20 +13,22 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSubmitting(true);
+  async function handleSubmit(e) {
+  e.preventDefault();
+  setSubmitting(true);
 
-    const { error } = signIn({ email, password });
-    setSubmitting(false);
+  const { error } = await signIn({ email, password });
 
-    if (error) {
-      toast.error(error);
-      return;
-    }
-    toast.success("Welcome back");
-    navigate("/dashboard");
+  setSubmitting(false);
+
+  if (error) {
+    toast.error(error);
+    return;
   }
+
+  toast.success("Welcome back");
+  navigate("/dashboard");
+}
 
   return (
     <AuthShell

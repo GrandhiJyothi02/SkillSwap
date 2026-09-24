@@ -111,24 +111,100 @@ export function AuthProvider({ children }) {
     return { user: newUser };
   }
 
-  function signIn({ email, password }) {
-    const users = readUsers();
-    const normalizedEmail = email.trim().toLowerCase();
-    const found = users.find((u) => u.email === normalizedEmail);
+  async function signIn({ email, password }) {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/auth/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          password,
+        }),
+      }
+    );
 
-    if (!found || found.password !== password) {
-      return { error: "Incorrect email or password." };
+    const data = await response.json();
+
+    if (!response.ok) {
+      return {
+        error: data.message || "Incorrect email or password.",
+      };
     }
 
-    localStorage.setItem(SESSION_KEY, normalizedEmail);
-    setUser(found);
-    return { user: found };
-  }
+    const loggedInUser = {
+      ...data.user,
+      fullName: data.user.name || data.user.fullName,
+    };
 
-  function signOut() {
-    localStorage.removeItem(SESSION_KEY);
-    setUser(null);
+    localStorage.setItem(SESSION_KEY, loggedInUser.email);
+    setUser(loggedInUser);
+
+    return { user: loggedInUser };
+  } catch (error) {
+    console.error("Login API error:", error);
+    return {
+      error: "Unable to connect to the server.",
+    };
   }
+}
+function signOut() {
+  localStorage.removeItem(SESSION_KEY);
+  setUser(null);
+}
+ async function signUp({ fullName, email, password, skills }) {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/auth/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: fullName.trim(),
+          email: email.trim().toLowerCase(),
+          password,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return {
+        error: data.message || "Registration failed.",
+      };
+    }
+
+    const backendUser = data.user;
+
+    const newUser = {
+      ...backendUser,
+      fullName: backendUser.name || fullName.trim(),
+      skills: skills || [],
+      credits: 4,
+      bio: "",
+      practiceModules: defaultPracticeModules,
+      meetings: defaultMeetings,
+      quizScores: {},
+    };
+
+    localStorage.setItem(SESSION_KEY, newUser.email);
+    setUser(newUser);
+
+    return { user: newUser };
+  } catch (error) {
+    console.error("Registration API error:", error);
+
+    return {
+      error: "Unable to connect to the server. Please try again.",
+    };
+  }
+}
 
   function updateProfile(partial) {
     if (!user) return;

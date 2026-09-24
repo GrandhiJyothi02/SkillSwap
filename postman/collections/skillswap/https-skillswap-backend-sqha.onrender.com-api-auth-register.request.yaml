@@ -1,0 +1,17 @@
+$kind: http-request
+name: https://skillswap-backend-sqha.onrender.com/api/auth/register
+description: ""
+url: https://skillswap-backend-sqha.onrender.com/api/auth/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Test User\",\r
+
+    \  \"email\": \"testuser123@gmail.com\",\r
+
+    \  \"password\": \"Test123\"\r
+
+    }"
+order: 4503599627368466
